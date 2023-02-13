@@ -25,7 +25,7 @@ end
 # seed message privés
 20.times do
   PrivateMessage.create!(
-    content: Faker::Lorem.paragraph(2)
+    content: Faker::Lorem.paragraph
   )
 end
 
@@ -36,7 +36,7 @@ end
     last_name: Faker::Name.last_name,
     description: Faker::Lorem.sentence,
     email: Faker::Internet.email,
-    age: Faker::Number.between(7, 77),
+    age: Faker::Number.between(23, 77),
     city_id: City.all.sample.id
   )
 end
