@@ -6,13 +6,13 @@
     <h1>Bienvenue !</h1>
     <p>Tu trouvera ici tous les Gossips</p>
     <!-- Afficher la liste des Gossip -->
-        <% @all_gossips.each do |gossip| %>
+        <% @all_gossips.each do |gossip, id| %>
         <div class="card" style="width: 18rem;">
     
             <div class="card-body">
                 <h5 class="card-title">De : <%= gossip.user.first_name %></h5>
                 <p class="card-text">Titre du Gossip : <%= gossip.title %></p>
-                <a href="#" class="btn btn-primary">Voir le gossip</a>
+                <a href="/show/<%= gossip.id %>" class="btn btn-primary">Voir le gossip</a>
             </div>
         </div>
         <% end %>
