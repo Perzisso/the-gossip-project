@@ -1,9 +1,23 @@
-<h1>Bienvenue !</h1>
-<p>Tu trouvera ici tous les Gossips</p>
-<!-- Afficher la liste des Gossip -->
+<body>
+
+<div class="container">
+
+    <div class="row">
+    <h1>Bienvenue !</h1>
+    <p>Tu trouvera ici tous les Gossips</p>
+    <!-- Afficher la liste des Gossip -->
         <% @all_gossips.each do |gossip| %>
-            <p>
-                <a>Prénom : <%= gossip.user.first_name %></a><br/>
-                <a>Titre du Gossip <%= gossip.title %></a>
-            </p>
+        <div class="card" style="width: 18rem;">
+    
+            <div class="card-body">
+                <h5 class="card-title">De : <%= gossip.user.first_name %></h5>
+                <p class="card-text">Titre du Gossip : <%= gossip.title %></p>
+                <a href="#" class="btn btn-primary">Voir le gossip</a>
+            </div>
+        </div>
         <% end %>
+    </div>
+
+</div>
+
+</body>
