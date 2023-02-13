@@ -25,7 +25,9 @@ end
 # seed message privés
 20.times do
   PrivateMessage.create!(
-    content: Faker::Lorem.paragraph
+    content: Faker::Quote.matz,
+    sender_id: rand(1..10),
+    recipient_id: rand(1..10)
   )
 end
 
@@ -36,7 +38,7 @@ end
     last_name: Faker::Name.last_name,
     description: Faker::Lorem.sentence,
     email: Faker::Internet.email,
-    age: Faker::Number.between(23, 77),
+    age: rand(23..77),
     city_id: City.all.sample.id
   )
 end
@@ -44,8 +46,8 @@ end
 # seed gossip
 20.times do
   Gossip.create!(
-    title: Faker::Lorem.sentence(3),
-    content: Faker::Lorem.paragraph(3),
+    title: Faker::Lorem.sentence,
+    content: Faker::Lorem.paragraph,
     user_id: User.all.sample.id
   )
 end
