@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'welcome/welcome'
   root 'index#index'
-  get '/team', to: 'team#team'
-  get '/contact', to: 'contact#contact'
-  get '/welcome', to: 'welcome#welcome'
+  get '/team', to: 'team#team_method'
+  get '/contact', to: 'contact#contact_method'
+  get '/welcome/:id', to: 'welcome#first_name'
+  get '/welcome', to: 'welcome#display_welcome'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Defines the root path route ("/")

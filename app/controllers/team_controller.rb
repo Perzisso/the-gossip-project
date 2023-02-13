@@ -1,4 +1,4 @@
 class TeamController < ApplicationController
-  def team
+  def team_method
   end
 end

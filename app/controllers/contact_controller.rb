@@ -1,4 +1,4 @@
 class ContactController < ApplicationController
-  def contact
+  def contact_method
   end
 end
