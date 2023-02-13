@@ -1,4 +1,4 @@
 class TeamController < ApplicationController
-    def team
-    end
+  def team
+  end
 end
