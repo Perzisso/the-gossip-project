@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/welcome/:id', to: 'welcome#first_name'
   get '/welcome', to: 'welcome#display_welcome'
   get '/show/:gossip_id', to: 'show#show_gossip'
+  resources :gossips
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Defines the root path route ("/")
