@@ -8,5 +8,6 @@ class ShowController < ApplicationController
   end
 
   def show_gossip
+    @gossip_id = Gossip.find(params[:gossip_id])
   end
 end
