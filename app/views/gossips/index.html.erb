@@ -10,9 +10,9 @@
         <div class="card" style="width: 18rem;">
     
             <div class="card-body">
-                <h5 class="card-title">De : <%= gossip.user.first_name %></h5>
-                <p class="card-text">Titre du Gossip : <%= gossip.title %></p>
-                <a href="/show/<%= gossip.id %>" class="btn btn-primary">Voir le gossip</a>
+                <h5 class="card-title">Gossip n°<%= gossip.id %></h5>
+                <p class="card-text"> <%= gossip.title %></p>
+                <a href="/gossips/<%= gossip.id %>" class="btn btn-primary">Voir le gossip n°<%= gossip.id %></a>
             </div>
         </div>
         <% end %>
