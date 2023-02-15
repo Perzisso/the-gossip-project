@@ -1,0 +1,33 @@
+<h1>Gossips#edit</h1>
+<p>Find me in app/views/gossips/edit.html.erb</p>
+
+<body>
+
+<a>Bonjour, c'est l'heure de passer à la questionnette pour l'update (et ça rime !) !</a>
+
+<html>
+  <body>
+
+
+    <%= form_tag url_for(action: 'update'), method: "patch" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title' %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content' %>
+      <br /> <br />
+
+
+
+      <%= submit_tag "Modifier le gossip" %>
+
+    <% end %>
+
+    <!-- ... -->
+  </body>
+</html>
+
+</body>

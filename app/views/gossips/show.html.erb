@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" style="width: 32rem;">
   <div class="card-header">
     <%= @gossip_id.title %>
   </div>
@@ -7,9 +7,18 @@
     <blockquote class="blockquote mb-0">
       <p><%= @gossip_id.content %></p>
       <footer class="blockquote-footer"><%= @gossip_id.user.first_name %> de <%= @gossip_id.user.city.name %> </cite></footer>
-      <a href="/users/<%= @gossip_id.user.id %>" class="btn btn-primary">Voila les infos de <%= @gossip_id.user.first_name %></a>
-      <a href="/cities/<%= @gossip_id.user.city_id %>" class="btn btn-primary">Voir les gossips de la ville</a>
+      <a href="/users/<%= @gossip_id.user.id %>" class="btn btn-primary btn-sm">Profil de <%= @gossip_id.user.first_name %></a>
+      <a href="/cities/<%= @gossip_id.user.city_id %>" class="btn btn-secondary btn-sm">Gossips de <%= @gossip_id.user.city.name %></a>
+    
     </blockquote>
+  </div>
+  <div class="card" style="width: 32rem;">
+  <a href="/gossips/<%= params[:id] %>/edit" class="btn btn-outline-danger btn-sm btn-block">Modifier</a>
+      </br>
+      <%= link_to "Supprimer", @gossip, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
   </div>
 
 </div>
