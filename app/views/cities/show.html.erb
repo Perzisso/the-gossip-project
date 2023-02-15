@@ -14,4 +14,23 @@
 
 </div>
 
-<p>Voici les gossips associés à <%= @city_id.name %> :</p>
+<h1>Voici les gossips associés à <%= @city_id.name %> :</h&>
+<div class="row">
+
+    <!-- Afficher la liste des Gossip -->
+        <% @all_gossips_by_city.each do |gossip| %>
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">Titre : <%= gossip.title %></h5>
+                <blockquote class="blockquote mb-0">
+                <p class="card-text"> <%= gossip.content %></p>
+                </blockquote>
+                
+                <a href="/gossips/<%= gossip.id %>" class="btn btn-primary">Voir le gossip n°<%= gossip.id %></a>
+            </div>
+
+        </div>
+        <% end %>
+
+</div>

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'tags/index'
+  get 'tags/show'
+  get 'tags/new'
+  get 'tags/create'
+  get 'tags/edit'
+  get 'tags/update'
+  get 'tags/destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Defines the root path route ("/")
@@ -11,4 +18,5 @@ Rails.application.routes.draw do
   resources :gossips
   resources :users
   resources :cities, only: [:show]
+  resources :tags
 end
