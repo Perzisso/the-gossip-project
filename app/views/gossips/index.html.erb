@@ -12,6 +12,7 @@
             <div class="card-body">
                 <h5 class="card-title">Gossip n°<%= gossip.id %></h5>
                 <p class="card-text"> <%= gossip.title %></p>
+                <footer class="blockquote-footer"><%= gossip.user.first_name %></cite></footer>
                 <a href="/gossips/<%= gossip.id %>" class="btn btn-primary">Voir le gossip n°<%= gossip.id %></a>
             </div>
         </div>
