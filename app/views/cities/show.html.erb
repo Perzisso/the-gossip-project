@@ -1,0 +1,17 @@
+<h1>Ville</h1>
+<p>T'as voyagé jusqu'à :</p>
+
+<div class="card">
+  <div class="card-header">
+    <%= @city_id.name %>
+  </div>
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>ZIP CODE : <%= @city_id.zip_code %></p>
+    </blockquote>
+  </div>
+
+</div>
+
+<p>Voici les gossips associés à <%= @city_id.name %> :</p>

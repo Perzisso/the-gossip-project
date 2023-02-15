@@ -4,13 +4,15 @@
     <%= @user_id.first_name %>
     <%= @user_id.last_name %>
   </div>
-  
+
   <div class="card-body">
     <blockquote class="blockquote mb-0">
       <p>Description : <%= @user_id.description %></p>
       <p>Age : <%= @user_id.age %></p>
       <p>Email : <%= @user_id.email %></p>
       <p>Localisation : <%= @user_id.city.name %></p>
+      <a href="/cities/<%= @user_id.city_id %>" class="btn btn-primary">Voir les gossips de la ville de <%= @user_id.city.name %></a>
+
   </div>
 
 </div>

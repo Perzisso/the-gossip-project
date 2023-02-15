@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'cities/show'
   get 'users/index'
   get 'users/show'
   get 'users/new'
@@ -17,4 +18,5 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#display_welcome'
   resources :gossips
   resources :users
+  resources :cities, only: [:show]
 end
