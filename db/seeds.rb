@@ -39,7 +39,8 @@ end
     description: Faker::Lorem.sentence,
     email: Faker::Internet.email,
     age: rand(23..77),
-    city_id: City.all.sample.id
+    city_id: City.all.sample.id,
+    password: "abcdefg"
   )
 end
 
