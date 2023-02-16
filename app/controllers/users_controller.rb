@@ -11,15 +11,16 @@ class UsersController < ApplicationController
 
   def create
     @user_create = User.new(user_params)
+    
     if @user_create.save
-        @user = User.last
-        @user.authenticate(params[:password])
-        redirect_to root_path
+      @user = User.find_by(email: params[:email])
+      log_in(@user)
+      redirect_to root_path
     else
-      puts "Pas marché !"
-        render :new, status: :unprocessable_entity
+      flash.now[:danger] = 'Invalid email/password combination'
+      render 'new'
     end
-end
+  end
 
 def edit
   @user = User.find(params[:id])
