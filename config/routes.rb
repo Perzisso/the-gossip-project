@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :users
   resources :cities, only: [:show]
   resources :tags
+  resources :session, only: [:new, :create, :destroy]
 end
