@@ -14,7 +14,7 @@ class GossipsController < ApplicationController
         @gossip_create = Gossip.new('title' => params[:title],
                                     'content' => params[:content])
         if @gossip_create.save
-            redirect_to new_gossips_path
+            redirect_to root_path
         else
             render :new, status: :unprocessable_entity
         end
