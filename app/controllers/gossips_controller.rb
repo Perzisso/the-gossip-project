@@ -1,5 +1,6 @@
 class GossipsController < ApplicationController
     before_action :authenticate_user
+    include GossipsHelper
 
     def index
         @all_gossips = Gossip.all
@@ -23,7 +24,11 @@ class GossipsController < ApplicationController
     end
 
     def edit
-        @gossip = Gossip.find(params[:id])
+        if @current_user == Gossip.find(params[:id]).user_id
+            @gossip = Gossip.find(params[:id])
+        else
+            redirect_to root_path
+        end
     end
 
     def update
