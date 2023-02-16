@@ -16,6 +16,7 @@ class UsersController < ApplicationController
         @user.authenticate(params[:password])
         redirect_to root_path
     else
+      puts "Pas marché !"
         render :new, status: :unprocessable_entity
     end
 end
@@ -33,7 +34,7 @@ end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :description, :age, :city_id, :email, :password)
+    params.permit(:first_name, :last_name, :description, :age, :city_id, :email, :password)
   end
 
 end
