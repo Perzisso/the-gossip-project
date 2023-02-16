@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'tags/index'
-  get 'tags/show'
-  get 'tags/new'
-  get 'tags/create'
-  get 'tags/edit'
-  get 'tags/update'
-  get 'tags/destroy'
+ 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Defines the root path route ("/")
@@ -19,5 +13,5 @@ Rails.application.routes.draw do
   resources :users
   resources :cities, only: [:show]
   resources :tags
-  resources :session, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
 end

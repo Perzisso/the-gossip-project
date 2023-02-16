@@ -3,21 +3,37 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_id = User.find(params[:id])
+    
   end
 
   def new
   end
 
   def create
-  end
+    @user_create = User.new(user_params)
+    if @user_create.save
+        @user = User.last
+        @user.authenticate(params[:password])
+        redirect_to root_path
+    else
+        render :new, status: :unprocessable_entity
+    end
+end
 
-  def edit
-  end
+def edit
+  @user = User.find(params[:id])
+end
 
   def update
   end
 
   def destroy
+    @user.destroy
   end
+
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :description, :age, :city_id, :email, :password)
+  end
+
 end
